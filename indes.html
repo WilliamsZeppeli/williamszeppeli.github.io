@@ -1,0 +1,1236 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Valentine's Day ♥</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Crimson Text", serif;
+        background: linear-gradient(
+          135deg,
+          #0a0e1a 0%,
+          #1a1a2e 50%,
+          #16213e 100%
+        );
+        color: #e0e0e0;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        overflow-x: hidden;
+        position: relative;
+      }
+
+      .particle {
+        position: fixed;
+        width: 4px;
+        height: 4px;
+        background: rgba(102, 252, 241, 0.6);
+        border-radius: 50%;
+        pointer-events: none;
+        animation: float 8s infinite ease-in-out;
+        box-shadow: 0 0 10px rgba(102, 252, 241, 0.8);
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0) translateX(0);
+          opacity: 0;
+        }
+        10% {
+          opacity: 1;
+        }
+        90% {
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(-100vh) translateX(50px);
+          opacity: 0;
+        }
+      }
+
+      .container {
+        max-width: 900px;
+        background: rgba(20, 20, 35, 0.95);
+        border: 3px solid #4a9d9c;
+        border-radius: 20px;
+        padding: 60px 50px;
+        box-shadow:
+          0 0 50px rgba(102, 252, 241, 0.3),
+          inset 0 0 30px rgba(0, 0, 0, 0.5);
+        position: relative;
+        backdrop-filter: blur(10px);
+        animation: fadeIn 1.5s ease-in;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: scale(0.9);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      .corner {
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        border-style: solid;
+        border-color: #66fcf1;
+      }
+
+      .corner.top-left {
+        top: -3px;
+        left: -3px;
+        border-width: 3px 0 0 3px;
+        border-radius: 20px 0 0 0;
+      }
+
+      .corner.top-right {
+        top: -3px;
+        right: -3px;
+        border-width: 3px 3px 0 0;
+        border-radius: 0 20px 0 0;
+      }
+
+      .corner.bottom-left {
+        bottom: -3px;
+        left: -3px;
+        border-width: 0 0 3px 3px;
+        border-radius: 0 0 0 20px;
+      }
+
+      .corner.bottom-right {
+        bottom: -3px;
+        right: -3px;
+        border-width: 0 3px 3px 0;
+        border-radius: 0 0 20px 0;
+      }
+
+      h1 {
+        font-family: "Cinzel", serif;
+        font-size: 3em;
+        text-align: center;
+        color: #66fcf1;
+        margin-bottom: 20px;
+        text-shadow:
+          0 0 20px rgba(102, 252, 241, 0.8),
+          0 0 40px rgba(102, 252, 241, 0.4);
+        letter-spacing: 3px;
+        animation: glow 2s ease-in-out infinite alternate;
+      }
+
+      @keyframes glow {
+        from {
+          text-shadow:
+            0 0 20px rgba(102, 252, 241, 0.8),
+            0 0 40px rgba(102, 252, 241, 0.4);
+        }
+        to {
+          text-shadow:
+            0 0 30px rgba(102, 252, 241, 1),
+            0 0 60px rgba(102, 252, 241, 0.6),
+            0 0 80px rgba(102, 252, 241, 0.3);
+        }
+      }
+
+      .subtitle {
+        text-align: center;
+        color: #9ba3af;
+        font-style: italic;
+        font-size: 1.2em;
+        margin-bottom: 40px;
+        letter-spacing: 2px;
+      }
+
+      .heart-divider {
+        text-align: center;
+        font-size: 2em;
+        margin: 30px 0;
+        color: #ff6b9d;
+        animation: heartbeat 1.5s ease-in-out infinite;
+      }
+
+      @keyframes heartbeat {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        25% {
+          transform: scale(1.1);
+        }
+        50% {
+          transform: scale(1);
+        }
+      }
+
+      .letter {
+        line-height: 2;
+        font-size: 1.3em;
+        text-align: justify;
+        color: #d1d5db;
+        padding: 30px;
+        background: rgba(0, 0, 0, 0.3);
+        border-left: 4px solid #66fcf1;
+        border-radius: 10px;
+        margin: 30px 0;
+        box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+      }
+
+      .letter p {
+        margin-bottom: 20px;
+        text-indent: 40px;
+      }
+
+      .letter p:first-child::first-letter {
+        font-size: 3em;
+        font-weight: bold;
+        color: #66fcf1;
+        float: left;
+        line-height: 1;
+        margin-right: 10px;
+        margin-top: 5px;
+      }
+
+      .signature {
+        text-align: right;
+        font-size: 1.5em;
+        font-style: italic;
+        color: #66fcf1;
+        margin-top: 40px;
+        font-family: "Cinzel", serif;
+      }
+
+      .hollow-symbol {
+        text-align: center;
+        font-size: 4em;
+        margin: 30px 0;
+        color: #66fcf1;
+        filter: drop-shadow(0 0 10px rgba(102, 252, 241, 0.8));
+      }
+
+      .quote {
+        text-align: center;
+        font-style: italic;
+        font-size: 1.1em;
+        color: #9ba3af;
+        margin: 40px 0;
+        padding: 20px;
+        border-top: 1px solid #4a9d9c;
+        border-bottom: 1px solid #4a9d9c;
+      }
+
+      @keyframes borderGlow {
+        0%,
+        100% {
+          box-shadow:
+            0 0 50px rgba(102, 252, 241, 0.3),
+            inset 0 0 30px rgba(0, 0, 0, 0.5);
+        }
+        50% {
+          box-shadow:
+            0 0 70px rgba(102, 252, 241, 0.5),
+            inset 0 0 30px rgba(0, 0, 0, 0.5);
+        }
+      }
+
+      .container {
+        animation:
+          fadeIn 1.5s ease-in,
+          borderGlow 3s ease-in-out infinite;
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          padding: 40px 30px;
+        }
+
+        h1 {
+          font-size: 2em;
+        }
+
+        .letter {
+          font-size: 1.1em;
+          padding: 20px;
+        }
+      }
+
+      .interactive-heart {
+        display: inline-block;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        user-select: none;
+      }
+
+      .interactive-heart:hover {
+        transform: scale(1.3) rotate(10deg);
+        filter: drop-shadow(0 0 15px #ff6b9d);
+      }
+
+      .click-heart {
+        position: fixed;
+        font-size: 2em;
+        color: #ff6b9d;
+        pointer-events: none;
+        animation: floatHeart 2s ease-out forwards;
+        z-index: 1000;
+      }
+
+      @keyframes floatHeart {
+        0% {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+        100% {
+          opacity: 0;
+          transform: translateY(-150px) scale(1.5);
+        }
+      }
+
+      .secret-message {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        background: rgba(10, 14, 26, 0.98);
+        border: 3px solid #66fcf1;
+        border-radius: 20px;
+        padding: 40px;
+        z-index: 2000;
+        max-width: 500px;
+        text-align: center;
+        box-shadow: 0 0 100px rgba(102, 252, 241, 0.8);
+        transition: transform 0.5s ease;
+      }
+
+      .secret-message.show {
+        transform: translate(-50%, -50%) scale(1);
+      }
+
+      .secret-message h2 {
+        color: #66fcf1;
+        font-family: "Cinzel", serif;
+        margin-bottom: 20px;
+        font-size: 2em;
+      }
+
+      .secret-message p {
+        color: #d1d5db;
+        font-size: 1.2em;
+        line-height: 1.8;
+      }
+
+      .close-btn {
+        margin-top: 20px;
+        padding: 10px 30px;
+        background: #66fcf1;
+        border: none;
+        border-radius: 10px;
+        color: #0a0e1a;
+        font-family: "Cinzel", serif;
+        font-size: 1.1em;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .close-btn:hover {
+        background: #4a9d9c;
+        transform: scale(1.1);
+        box-shadow: 0 0 20px rgba(102, 252, 241, 0.8);
+      }
+
+      .geo-counter {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: rgba(20, 20, 35, 0.9);
+        border: 2px solid #66fcf1;
+        border-radius: 15px;
+        padding: 15px 25px;
+        font-family: "Cinzel", serif;
+        color: #66fcf1;
+        font-size: 1.2em;
+        z-index: 100;
+        box-shadow: 0 0 20px rgba(102, 252, 241, 0.5);
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .geo-counter:hover {
+        transform: scale(1.1);
+        box-shadow: 0 0 30px rgba(102, 252, 241, 0.8);
+      }
+
+      .hidden-charm {
+        display: inline-block;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        filter: grayscale(100%) brightness(0.5);
+      }
+
+      .hidden-charm.discovered {
+        filter: grayscale(0%) brightness(1);
+        animation: charmGlow 1s ease-in-out;
+      }
+
+      @keyframes charmGlow {
+        0%,
+        100% {
+          filter: drop-shadow(0 0 10px rgba(102, 252, 241, 0.8));
+        }
+        50% {
+          filter: drop-shadow(0 0 30px rgba(102, 252, 241, 1));
+        }
+      }
+
+      .audio-toggle {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        background: rgba(20, 20, 35, 0.9);
+        border: 2px solid #66fcf1;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5em;
+        color: #66fcf1;
+        cursor: pointer;
+        z-index: 100;
+        transition: all 0.3s ease;
+        box-shadow: 0 0 20px rgba(102, 252, 241, 0.5);
+      }
+
+      .audio-toggle:hover {
+        transform: rotate(180deg) scale(1.1);
+        box-shadow: 0 0 30px rgba(102, 252, 241, 0.8);
+      }
+
+      .letter p {
+        transition: all 0.3s ease;
+        cursor: pointer;
+      }
+
+      .letter p:hover {
+        color: #66fcf1;
+        text-shadow: 0 0 10px rgba(102, 252, 241, 0.5);
+        transform: translateX(10px);
+      }
+
+      .hollow-symbol {
+        cursor: pointer;
+        transition: all 0.5s ease;
+      }
+
+      .hollow-symbol:hover {
+        transform: rotate(360deg) scale(1.2);
+        filter: drop-shadow(0 0 30px rgba(102, 252, 241, 1));
+      }
+
+      @keyframes shake {
+        0%,
+        100% {
+          transform: translateX(0);
+        }
+        25% {
+          transform: translateX(-10px);
+        }
+        75% {
+          transform: translateX(10px);
+        }
+      }
+
+      .shake {
+        animation: shake 0.5s ease;
+      }
+
+      .hud {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        right: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        z-index: 100;
+        pointer-events: none;
+      }
+
+      .hud > * {
+        pointer-events: all;
+      }
+
+      .stats-panel {
+        background: rgba(20, 20, 35, 0.95);
+        border: 2px solid #66fcf1;
+        border-radius: 15px;
+        padding: 20px;
+        font-family: "Cinzel", serif;
+        color: #66fcf1;
+        box-shadow: 0 0 20px rgba(102, 252, 241, 0.5);
+        min-width: 250px;
+      }
+
+      .stat-line {
+        display: flex;
+        justify-content: space-between;
+        margin: 8px 0;
+        font-size: 1.1em;
+      }
+
+      .stat-value {
+        color: #fff;
+        font-weight: bold;
+      }
+
+      .progress-bar {
+        width: 100%;
+        height: 20px;
+        background: rgba(0, 0, 0, 0.5);
+        border-radius: 10px;
+        margin: 10px 0;
+        overflow: hidden;
+        border: 1px solid #4a9d9c;
+      }
+
+      .progress-fill {
+        height: 100%;
+        background: linear-gradient(90deg, #66fcf1, #4a9d9c);
+        transition: width 0.5s ease;
+        box-shadow: 0 0 10px rgba(102, 252, 241, 0.8);
+      }
+
+      .missions-panel {
+        background: rgba(20, 20, 35, 0.95);
+        border: 2px solid #66fcf1;
+        border-radius: 15px;
+        padding: 20px;
+        font-family: "Cinzel", serif;
+        color: #66fcf1;
+        box-shadow: 0 0 20px rgba(102, 252, 241, 0.5);
+        max-width: 300px;
+      }
+
+      .missions-panel h3 {
+        margin: 0 0 15px 0;
+        font-size: 1.3em;
+        text-align: center;
+        text-shadow: 0 0 10px rgba(102, 252, 241, 0.8);
+      }
+
+      .mission-item {
+        background: rgba(0, 0, 0, 0.3);
+        border-left: 3px solid #66fcf1;
+        padding: 10px;
+        margin: 10px 0;
+        border-radius: 5px;
+        font-size: 0.95em;
+      }
+
+      .mission-item.completed {
+        border-left-color: #4ade80;
+        opacity: 0.6;
+      }
+
+      .mission-item.completed::before {
+        content: "✓ ";
+        color: #4ade80;
+        font-weight: bold;
+      }
+
+      .mission-progress {
+        color: #9ba3af;
+        font-size: 0.9em;
+        margin-top: 5px;
+      }
+
+      .achievement-popup {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        background: rgba(10, 14, 26, 0.98);
+        border: 3px solid #ffd700;
+        border-radius: 20px;
+        padding: 40px;
+        z-index: 3000;
+        max-width: 500px;
+        text-align: center;
+        box-shadow: 0 0 100px rgba(255, 215, 0, 0.8);
+        transition: transform 0.5s ease;
+      }
+
+      .achievement-popup.show {
+        transform: translate(-50%, -50%) scale(1);
+        animation: achievementShake 0.5s ease;
+      }
+
+      @keyframes achievementShake {
+        0%,
+        100% {
+          transform: translate(-50%, -50%) scale(1);
+        }
+        25% {
+          transform: translate(-50%, -50%) scale(1.05) rotate(2deg);
+        }
+        75% {
+          transform: translate(-50%, -50%) scale(1.05) rotate(-2deg);
+        }
+      }
+
+      .achievement-popup h2 {
+        color: #ffd700;
+        font-family: "Cinzel", serif;
+        margin-bottom: 20px;
+        font-size: 2.5em;
+        text-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+      }
+
+      .achievement-icon {
+        font-size: 5em;
+        margin: 20px 0;
+        animation: rotate 2s linear infinite;
+      }
+
+      @keyframes rotate {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      .charm-slot {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        border: 2px solid #4a9d9c;
+        border-radius: 8px;
+        margin: 5px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5em;
+        background: rgba(0, 0, 0, 0.5);
+        transition: all 0.3s ease;
+      }
+
+      .charm-slot.filled {
+        background: rgba(102, 252, 241, 0.2);
+        border-color: #66fcf1;
+        box-shadow: 0 0 15px rgba(102, 252, 241, 0.5);
+      }
+
+      .charm-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 15px 0;
+      }
+
+      .notification {
+        position: fixed;
+        top: 100px;
+        right: 20px;
+        background: rgba(20, 20, 35, 0.95);
+        border: 2px solid #66fcf1;
+        border-radius: 10px;
+        padding: 15px 20px;
+        font-family: "Cinzel", serif;
+        color: #66fcf1;
+        box-shadow: 0 0 20px rgba(102, 252, 241, 0.5);
+        z-index: 1500;
+        animation:
+          slideIn 0.5s ease,
+          fadeOut 0.5s ease 2.5s forwards;
+      }
+
+      @keyframes slideIn {
+        from {
+          transform: translateX(400px);
+          opacity: 0;
+        }
+        to {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+
+      @keyframes fadeOut {
+        to {
+          opacity: 0;
+          transform: translateX(400px);
+        }
+      }
+
+      .intro-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(10, 14, 26, 0.98);
+        z-index: 5000;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 40px;
+      }
+
+      .intro-screen h1 {
+        font-size: 4em;
+        margin-bottom: 30px;
+      }
+
+      .intro-screen p {
+        font-size: 1.3em;
+        color: #d1d5db;
+        max-width: 600px;
+        line-height: 1.8;
+        margin: 20px 0;
+      }
+
+      .start-button {
+        margin-top: 40px;
+        padding: 20px 50px;
+        background: #66fcf1;
+        border: none;
+        border-radius: 15px;
+        color: #0a0e1a;
+        font-family: "Cinzel", serif;
+        font-size: 1.5em;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 0 30px rgba(102, 252, 241, 0.6);
+      }
+
+      .start-button:hover {
+        background: #4a9d9c;
+        transform: scale(1.1);
+        box-shadow: 0 0 50px rgba(102, 252, 241, 1);
+      }
+
+      @media (max-width: 768px) {
+        .hud {
+          flex-direction: column;
+          gap: 10px;
+        }
+
+        .stats-panel,
+        .missions-panel {
+          width: 100%;
+          max-width: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="intro-screen" id="introScreen">
+      <h1>✦ Un Viaje en Hallownest ✦</h1>
+      <p>
+        Bienvenido, mi amor, a esta aventura especial, tendrás misiones que
+        completar.
+      </p>
+      <p>
+        <strong>Tu Quest:</strong><br />
+        - Descubre los 5 Charms ocultos<br />
+        - Lee cada fragmento de mi carta<br />
+        - Desbloquea el mensaje final<br />
+      </p>
+      <p style="color: #9ba3af; font-size: 1em; margin-top: 30px">
+        💡 Tip: Hay secretos por descubrir... ¿Conoces el código Konami?
+      </p>
+      <button class="start-button" onclick="startJourney()">
+        Comenzar la Aventura ♥
+      </button>
+    </div>
+
+    <div class="hud" id="gameHud" style="display: none">
+      <div class="stats-panel">
+        <div class="stat-line">
+          <span>Geo:</span>
+          <span class="stat-value" id="geoCount">0</span>
+        </div>
+        <div class="stat-line">
+          <span>Charms:</span>
+          <span class="stat-value"><span id="charmsCount">0</span>/5</span>
+        </div>
+        <div class="charm-container" id="charmSlots">
+          <div class="charm-slot"></div>
+          <div class="charm-slot"></div>
+          <div class="charm-slot"></div>
+          <div class="charm-slot"></div>
+          <div class="charm-slot"></div>
+        </div>
+        <div
+          style="
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #4a9d9c;
+          "
+        >
+          <div class="stat-line">
+            <span>Progreso:</span>
+            <span class="stat-value" id="progressPercent">0%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" id="progressBar" style="width: 0%"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="missions-panel">
+        <h3>✦ Misiones ✦</h3>
+        <div class="mission-item" id="mission1">
+          Descubrir Primer Charm
+          <div class="mission-progress">0/1</div>
+        </div>
+        <div class="mission-item" id="mission2">
+          Leer los 5 párrafos
+          <div class="mission-progress" id="readProgress">0/5</div>
+        </div>
+        <div class="mission-item" id="mission3">
+          Interactuar con corazones
+          <div class="mission-progress" id="heartProgress">0/3</div>
+        </div>
+        <div class="mission-item" id="mission4">
+          Coleccionar 100 Geo
+          <div class="mission-progress" id="geoProgress">0/100</div>
+        </div>
+        <div class="mission-item" id="mission5">
+          Encontrar todos los Charms
+          <div class="mission-progress" id="charmProgress">0/5</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="achievement-popup" id="achievementPopup">
+      <h2>¡Logro Desbloqueado!</h2>
+      <div class="achievement-icon" id="achievementIcon">🏆</div>
+      <p
+        id="achievementText"
+        style="color: #d1d5db; font-size: 1.2em; line-height: 1.8"
+      ></p>
+      <button class="close-btn" onclick="closeAchievement()">
+        Continuar ♥
+      </button>
+    </div>
+
+    <div class="secret-message" id="secretMessage">
+      <h2>💙 Mensaje Final Desbloqueado 💙</h2>
+      <p>
+        Has completado todas las misiones, mi amor.
+        <br /><br />
+        Cada momento contigo es un logro que valoro más que cualquier cosa en
+        este mundo.
+        <br /><br />
+        <strong style="color: #66fcf1; font-size: 1.3em">
+          ¡Feliz San Valentín, mi amor! ♥
+        </strong>
+        <br /><br />
+        Te amo más que el Knight ama sentarse en un banco JAKSAJ.
+      </p>
+      <button class="close-btn" onclick="closeSecret()">
+        Guardar en mi corazón ♥
+      </button>
+    </div>
+
+    <script>
+      for (let i = 0; i < 15; i++) {
+        const particle = document.createElement("div");
+        particle.className = "particle";
+        particle.style.left = Math.random() * 100 + "%";
+        particle.style.animationDelay = Math.random() * 8 + "s";
+        particle.style.animationDuration = Math.random() * 5 + 6 + "s";
+        document.body.appendChild(particle);
+      }
+    </script>
+
+    <div class="container" id="mainContainer" style="display: none">
+      <div class="corner top-left"></div>
+      <div class="corner top-right"></div>
+      <div class="corner bottom-left"></div>
+      <div class="corner bottom-right"></div>
+
+      <h1>Para mi Zozo</h1>
+      <div class="subtitle">En este reino de sombras, encontré mi luz uwu.</div>
+
+      <div
+        class="hollow-symbol"
+        data-charm="1"
+        title="✦ Charm Oculto - Haz clic"
+      >
+        ✦
+      </div>
+
+      <div class="letter">
+        <p data-paragraph="1">
+          Mi amor, no podia cerrar el día sin darte algo significativo para este
+          día tan especial, quería hacerlo más profesional y lo vas a tener,
+          pero por mientras, tendrás esto en local. Lloro.
+        </p>
+
+        <p data-paragraph="2">
+          En verdad que ser tu novia a lo largo de los años ha sido la cosa más
+          hermosa que me ha pasado, no hay día en el que no me vaya a dormir
+          pensando en lo hermosa que es la relación. Cada día descubro más de ti
+          que me hace seguir queriendo estar a tu lado por mucho más tiempo. La
+          manera en la que nuestras almas se conectan, en la que nuestro humor
+          es igual de rancio, digo, bueno(?) JAJAJ, ella jura.
+        </p>
+
+        <p
+          data-paragraph="3"
+          data-charm="2"
+          style="cursor: pointer"
+          title="💎 Charm Oculto"
+        >
+          Eres el hombre que siempre quise tener a mi lado, aquel que nunca se
+          conforma, que siempre busca seguir mejorando, buscando mi bienestar,
+          el de la relación. Aquel que siempre me procura y se preocupa por mí,
+          ese chico de ojos color avellana que miraba borroso en los sueños que
+          tenía de pequeña.
+        </p>
+
+        <p data-paragraph="4">
+          Lo eres todo para mí, Zoe. Gracias por pasar conmigo un año más, como
+          mi San Valentín. Sigamos mejorando como pareja y como personas, yo sé
+          que llegaremos muy lejos, somos los más fregones, de eso no hay duda.
+        </p>
+
+        <p data-paragraph="5">
+          Te amo tanto, pero tanto, tanto, mi caballerito ajskajsk.
+        </p>
+      </div>
+
+      <div class="heart-divider">
+        <span class="interactive-heart" data-charm="3" title="♥ Charm del Amor"
+          >♥</span
+        >
+        <span class="interactive-heart" data-charm="4" title="♥ Charm del Amor"
+          >♥</span
+        >
+        <span class="interactive-heart" data-charm="5" title="♥ Charm del Amor"
+          >♥</span
+        >
+      </div>
+
+      <div class="quote">
+        "No voice to cry suffering, but a heart full of love for you"
+        <br />
+        - Hollow Knight, adaptado con amor
+      </div>
+
+      <div class="signature">
+        Con todo mi amor,
+        <br />
+        Willis ✦
+      </div>
+
+      <div class="hollow-symbol">⚔</div>
+    </div>
+
+    <script>
+      const gameState = {
+        geo: 0,
+        charms: new Set(),
+        paragraphsRead: new Set(),
+        heartsClicked: new Set(),
+        missions: {
+          firstCharm: false,
+          allParagraphs: false,
+          allHearts: false,
+          geo100: false,
+          allCharms: false,
+        },
+        achievementsUnlocked: new Set(),
+        lastUpdate: 0,
+      };
+      function startJourney() {
+        document.getElementById("introScreen").style.display = "none";
+        document.getElementById("mainContainer").style.display = "block";
+        document.getElementById("gameHud").style.display = "flex";
+        showNotification("✦ La aventura comienza... ✦");
+        updateAllUI();
+      }
+
+      function updateAllUI() {
+        const now = Date.now();
+        if (now - gameState.lastUpdate < 50) {
+          return;
+        }
+        gameState.lastUpdate = now;
+
+        document.getElementById("geoCount").textContent = gameState.geo;
+        const charmsCount = gameState.charms.size;
+        document.getElementById("charmsCount").textContent = charmsCount;
+
+        const slots = document.querySelectorAll(".charm-slot");
+        slots.forEach((slot, index) => {
+          if (index < charmsCount) {
+            slot.classList.add("filled");
+            slot.textContent = "✦";
+          }
+        });
+
+        document.getElementById("readProgress").textContent =
+          `${gameState.paragraphsRead.size}/5`;
+        document.getElementById("heartProgress").textContent =
+          `${gameState.heartsClicked.size}/3`;
+        document.getElementById("geoProgress").textContent =
+          `${Math.min(gameState.geo, 100)}/100`;
+        document.getElementById("charmProgress").textContent =
+          `${charmsCount}/5`;
+
+        const totalProgress =
+          (gameState.paragraphsRead.size / 5) * 20 +
+          (gameState.heartsClicked.size / 3) * 20 +
+          (Math.min(gameState.geo, 100) / 100) * 30 +
+          (charmsCount / 5) * 30;
+
+        document.getElementById("progressBar").style.width =
+          totalProgress + "%";
+        document.getElementById("progressPercent").textContent =
+          Math.round(totalProgress) + "%";
+
+        checkMissions();
+      }
+
+      function showNotification(message) {
+        const notification = document.createElement("div");
+        notification.className = "notification";
+        notification.textContent = message;
+        document.body.appendChild(notification);
+        setTimeout(() => notification.remove(), 3000);
+      }
+
+      function showAchievement(icon, text) {
+        const popup = document.getElementById("achievementPopup");
+        document.getElementById("achievementIcon").textContent = icon;
+        document.getElementById("achievementText").textContent = text;
+        popup.classList.add("show");
+      }
+
+      function closeAchievement() {
+        document.getElementById("achievementPopup").classList.remove("show");
+      }
+
+      function closeSecret() {
+        document.getElementById("secretMessage").classList.remove("show");
+      }
+
+      function checkMissions() {
+        if (!gameState.missions.firstCharm && gameState.charms.size >= 1) {
+          gameState.missions.firstCharm = true;
+          document.getElementById("mission1").classList.add("completed");
+          showNotification("✓ Misión Completada: Primer Charm");
+          gameState.geo += 20;
+        }
+
+        if (
+          !gameState.missions.allParagraphs &&
+          gameState.paragraphsRead.size >= 5
+        ) {
+          gameState.missions.allParagraphs = true;
+          document.getElementById("mission2").classList.add("completed");
+          showAchievement(
+            "📖",
+            "Has leído toda la carta con el corazón. +50 Geo",
+          );
+          gameState.geo += 50;
+        }
+
+        if (
+          !gameState.missions.allHearts &&
+          gameState.heartsClicked.size >= 3
+        ) {
+          gameState.missions.allHearts = true;
+          document.getElementById("mission3").classList.add("completed");
+          showNotification("✓ Misión Completada: Corazones Activados");
+          gameState.geo += 30;
+        }
+
+        if (!gameState.missions.geo100 && gameState.geo >= 100) {
+          gameState.missions.geo100 = true;
+          document.getElementById("mission4").classList.add("completed");
+          showAchievement("💰", "Eres un coleccionista experto de Geo!");
+        }
+
+        if (!gameState.missions.allCharms && gameState.charms.size >= 5) {
+          gameState.missions.allCharms = true;
+          document.getElementById("mission5").classList.add("completed");
+          showAchievement("✦", "Todos los Charms encontrados! Eres increíble!");
+          gameState.geo += 100;
+        }
+
+        if (Object.values(gameState.missions).every((m) => m === true)) {
+          setTimeout(() => {
+            document.getElementById("secretMessage").classList.add("show");
+          }, 1000);
+        }
+
+        updateAllUI();
+      }
+
+      document.querySelectorAll("[data-charm]").forEach((element) => {
+        element.addEventListener("click", function (e) {
+          e.stopPropagation();
+          const charmId = this.getAttribute("data-charm");
+
+          if (!gameState.charms.has(charmId)) {
+            gameState.charms.add(charmId);
+
+            for (let i = 0; i < 8; i++) {
+              setTimeout(() => createParticle("✦", this, "#66fcf1"), i * 30);
+            }
+
+            showNotification(`✦ Charm ${charmId}/5 Descubierto! +10 Geo`);
+            gameState.geo += 10;
+
+            this.style.filter = "drop-shadow(0 0 30px rgba(102, 252, 241, 1))";
+
+            if (element.classList.contains("interactive-heart")) {
+              gameState.heartsClicked.add(charmId);
+            }
+
+            updateAllUI();
+          }
+        });
+      });
+
+      document.querySelectorAll("[data-paragraph]").forEach((paragraph) => {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                const paragraphId = entry.target.getAttribute("data-paragraph");
+                if (!gameState.paragraphsRead.has(paragraphId)) {
+                  gameState.paragraphsRead.add(paragraphId);
+                  gameState.geo += 5;
+                  createParticle("✨", entry.target, "#66fcf1");
+                  showNotification(`Párrafo ${paragraphId}/5 leído +5 Geo`);
+                  updateAllUI();
+                }
+              }
+            });
+          },
+          { threshold: 0.5 },
+        );
+
+        observer.observe(paragraph);
+      });
+
+      let clickThrottle = 0;
+      document.addEventListener("click", function (e) {
+        if (
+          !e.target.closest(".achievement-popup") &&
+          !e.target.closest(".secret-message") &&
+          !e.target.closest(".intro-screen") &&
+          !e.target.closest("[data-charm]")
+        ) {
+          const now = Date.now();
+          if (now - clickThrottle < 100) return;
+          clickThrottle = now;
+
+          gameState.geo += 1;
+          createParticle(
+            "♥",
+            { offsetLeft: e.pageX, offsetTop: e.pageY },
+            "#ff6b9d",
+          );
+          updateAllUI();
+        }
+      });
+
+      function createParticle(symbol, element, color) {
+        const particle = document.createElement("div");
+        particle.className = "click-heart";
+        particle.textContent = symbol;
+        particle.style.color = color;
+
+        if (element.offsetLeft !== undefined) {
+          particle.style.left =
+            element.offsetLeft + (element.offsetWidth || 0) / 2 + "px";
+          particle.style.top =
+            element.offsetTop + (element.offsetHeight || 0) / 2 + "px";
+        } else {
+          particle.style.left = element.offsetLeft + "px";
+          particle.style.top = element.offsetTop + "px";
+        }
+
+        document.body.appendChild(particle);
+        setTimeout(() => particle.remove(), 2000);
+      }
+
+      let konamiCode = [];
+      const konamiSequence = [
+        "ArrowUp",
+        "ArrowUp",
+        "ArrowDown",
+        "ArrowDown",
+        "ArrowLeft",
+        "ArrowRight",
+        "ArrowLeft",
+        "ArrowRight",
+      ];
+
+      document.addEventListener("keydown", function (e) {
+        konamiCode.push(e.key);
+        konamiCode = konamiCode.slice(-8);
+
+        if (konamiCode.join(",") === konamiSequence.join(",")) {
+          if (!gameState.achievementsUnlocked.has("konami")) {
+            gameState.achievementsUnlocked.add("konami");
+            gameState.geo += 999;
+
+            for (let i = 0; i < 30; i++) {
+              setTimeout(() => {
+                const heart = document.createElement("div");
+                heart.className = "click-heart";
+                heart.textContent = "♥";
+                heart.style.left = Math.random() * window.innerWidth + "px";
+                heart.style.top = Math.random() * window.innerHeight + "px";
+                heart.style.fontSize = Math.random() * 2 + 1 + "em";
+                document.body.appendChild(heart);
+                setTimeout(() => heart.remove(), 2000);
+              }, i * 60);
+            }
+
+            showAchievement(
+              "🎮",
+              "¡CÓDIGO KONAMI ACTIVADO! Eres un verdadero gamer. +999 Geo!",
+            );
+
+            setTimeout(() => {
+              ["1", "2", "3", "4", "5"].forEach((id) => {
+                if (!gameState.charms.has(id)) {
+                  gameState.charms.add(id);
+                }
+              });
+              updateAllUI();
+            }, 2000);
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
